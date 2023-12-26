@@ -6,24 +6,34 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.util.Date;
+
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity
-@Table(name="categories")
-public class Category {
+@Table(name = "products")
+public class Product {
 
     @Id
-    @Column(name = "id")
-    private String categoryId;
+    private String productId;
 
-    @Column(name="category_title",length = 60,nullable = false)
     private String title;
 
-    @Column(name = "category_desc",length = 500)
+    @Column(length = 5000)
     private String description;
-    private String coverImage;
 
+    private int price;
+
+    private int discountedProice;
+
+    private int quantity;
+
+    private Date addedDate;
+
+    private boolean live;
+
+    private boolean stock;
 }
